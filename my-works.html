@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Works</title>
+ 
+  <!-- Шрифт и иконки -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+  integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+  <style>
+    /* Сброс */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+ 
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+ 
+    /* Навигация */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 15px 40px;
+    }
+ 
+    nav a {
+      text-decoration: none;
+      color: black; /* чёрный текст */
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: 2px solid black; /* рамка вокруг текста */
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+ 
+    nav a:hover {
+      background-color: #6a11cb;
+      color: white;
+      border-color: #6a11cb;
+    }
+ 
+    /* Заголовок */
+    .hero-section {
+      width: 100%;
+      padding: 80px 20px 40px 20px;
+      text-align: center;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+    }
+ 
+    .hero-section h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s forwards;
+      animation-delay: 0.2s;
+    }
+ 
+    .hero-section p {
+      font-size: 1.2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s forwards;
+      animation-delay: 0.4s;
+    }
+ 
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+ 
+    /* Галерея */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 60px 20px;
+      background-color: #f0f0f0;
+    }
+ 
+    .gallery-item {
+      width: 250px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 1s forwards;
+    }
+ 
+    .gallery-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+ 
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+ 
+    .gallery-item p {
+      padding: 15px 10px;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+ 
+    .gallery-item:nth-child(1) { animation-delay: 0.6s; }
+    .gallery-item:nth-child(2) { animation-delay: 0.8s; }
+    .gallery-item:nth-child(3) { animation-delay: 1s; }
+
+    /* Кнопки снизу */
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 50px 0;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+      border: 2px solid black;
+      padding: 10px 18px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+    }
+
+    .links a:hover {
+      background-color: #6a11cb;
+      color: white;
+      border-color: #6a11cb;
+    }
+  </style>
+</head>
+<body>
+ 
+  <!-- Навигация -->
+  <nav>
+    <div class="left">
+      <a href="/">Maksym Bakumenko</a>
+    </div>
+ 
+    <div class="right">
+      <a href="mailto:maksym@example.com">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Email</span>
+      </a>
+    </div>
+  </nav>
+ 
+  <!-- Заголовок -->
+  <section class="hero-section">
+    <h1>Dette er mine arbeider</h1>
+    <p>Her er noen av mine prosjekter og arbeider jeg har laget.</p>
+  </section>
+ 
+  <!-- Галерея -->
+  <section class="gallery">
+    <div class="gallery-item">
+      <img src="Ph oppgave.jpg" alt="Project 1">
+      <p>Project 1</p>
+    </div>
+    <div class="gallery-item">
+      <img src="Austonaut.jpg" alt="Project 2">
+      <p>Project 2</p>
+    </div>
+    <div class="gallery-item">
+      <img src="Untitled-1.jpg" alt="Project 3">
+      <p>Project 3</p>
+    </div>
+  </section>
+
+  <!-- 🔽 Кнопки снизу -->
+  <div class="links fade-in-up" style="animation-delay: 0.6s;">
+    <a href="index.html"><i class="fa-solid fa-code"></i><span>Home</span></a>
+    <a href="about-me.html"><i class="fa-solid fa-pen"></i><span>About Me</span></a>
+    <a href="contact.html"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+  </div>
+
+</body>
+</html>

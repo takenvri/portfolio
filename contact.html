@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+  integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" 
+  referrerpolicy="no-referrer" />
+
+  <link rel ="stylesheet" href="style.css">
+
+  <title>Portfolio</title>
+
+  <style>
+    /* Кнопки снизу */
+    .links-bottom {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 60px 0 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .links-bottom a {
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+      border: 2px solid black;
+      padding: 10px 18px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+    }
+
+    .links-bottom a:hover {
+      background-color: #6a11cb;
+      color: white;
+      border-color: #6a11cb;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Навигация -->
+  <nav>
+    <div class="left">
+      <a href="/">Maksym Bakumenko</a>
+    </div>
+
+    <div class="right">
+      <a href="mailto:maksym@example.com">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Email</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Текст и форма -->
+  <section class="Melding">
+    <h2 class="fade-in-up" style="animation-delay: 0.2s;">
+       Fyll ut skjemaet for å kontakte meg!  
+    </h2>
+  </section>
+
+  <form class="contact-form fade-in-up">
+      <input type="text" placeholder="Navn" required>
+      <input type="email" placeholder="E-post" required>
+      <textarea placeholder="Melding" required></textarea>
+      <button type="submit" class="btn">Send</button>
+  </form>
+
+  <!-- Уведомление -->
+  <div id="notification" style="
+      display:none;
+      color: white;
+      background-color: green;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 15px;
+  ">
+      Takk! Meldingen din ble sendt ✅
+  </div>
+
+  <!-- Кнопки навигации внизу -->
+  <div class="links-bottom fade-in-up" style="animation-delay: 0.6s;">
+    <a href="index.html"><i class="fa-solid fa-code"></i><span>Home</span></a>
+    <a href="my-works.html"><i class="fa-solid fa-pen"></i><span>My Works</span></a>
+    <a href="about-me.html"><i class="fa-solid fa-envelope"></i><span>About Me</span></a>
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('.contact-form');
+
+      form.addEventListener('submit', function(e) {
+          e.preventDefault(); // предотвращаем перезагрузку страницы
+
+          alert("Takk! Meldingen din ble sendt ✅"); // уведомление
+          form.reset(); // очищаем форму
+      });
+  });
+  </script>
+
+</body>
+</html>

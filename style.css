@@ -1,0 +1,426 @@
+:root {
+    --text-color: #1a1c20;
+    --link-color: #4a76ee;
+    --background-color: white;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+}
+
+html {
+  scroll-behavior: smooth;  
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+}
+
+body.with-background {
+ background-image: url('peisazh.jpg'); /* путь к твоему файлу */
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-color: transparent; /* чтобы текст был читаем */
+}
+
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+
+/* NAVBAR */
+nav {
+   display: flex;
+   justify-content: space-between; 
+   align-items: center;
+   padding: 0 50px;
+   height: 80px;
+}
+
+nav .left a {
+  color: var(--text-color);
+  font-size: 22px;
+  font-weight: 600;
+  opacity: 0;
+  animation: fadeInLeft 1s ease-out forwards;
+  animation-delay: 0.3s; 
+}
+body.with-background nav .left a {
+    color: white;
+}
+
+nav .right a {
+  color: var(--text-color);
+  opacity: 0;
+  animation: fadeInRight 1s ease-out forwards;
+  animation-delay: 0.8s; 
+}
+
+nav .right a:last-child {
+    color:var(--background-color);
+    background-color: var(--text-color);
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+
+/*SECTION 1: HERO*/
+.hero-section {
+    display: flex;
+    justify-content: center;    
+    align-items: center;          
+    height: 100vh;                
+    text-align: center;           
+    padding: 0 20px;   
+    padding-top: 100px;
+    height: calc(100vh - 80px);   
+    margin-bottom: 100px;       
+}
+
+.hero-section .text {
+    max-width: 700px;
+}
+
+.hero-section .text h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.hero-section .text .links {
+    margin-top: 25px;
+}
+
+.hero-section .text .links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    border: 2px solid var(--link-color);
+    border-radius: 8px;
+    color: var(--link-color);
+    font-weight: 500;
+    transition: transform 0.25s ease, 
+    box-shadow 0.25s ease, 
+    background-color 0.25s ease;
+}
+
+.hero-section .text .links a:hover {
+    transform: scale(1.05); /* эффект приближения */
+    background-color: var(--link-color);
+    color: white;
+    box-shadow: 0 4px 12px rgba(74, 118, 238, 0.25);
+
+}
+
+/* TEXT ANIMATION */
+@keyframes smooth-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px); 
+  }
+  70% {
+    transform: translateY(2px); 
+  }
+  100% {
+    transform: translateY(0); 
+  }
+}
+
+.hero-section .text .links a:hover {
+    animation: smooth-bounce 0.8s cubic-bezier(0.28, 0.84, 0.42, 1); 
+    background-color: var(--link-color);
+    color: white;
+    box-shadow: 0 6px 15px rgba(74, 118, 238, 0.4);
+}
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.hero-section .text {
+    max-width: 700px;
+    opacity: 0;                          
+    animation: fadeInUp 1.2s ease forwards; 
+    animation-delay: 0.3s;               
+}
+
+
+/*ANIMATION*/
+.hero-section .text h2,
+.hero-section .text p,
+.hero-section .text .links {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero-section .text h2 {
+    animation-delay: 0.3s;
+}
+
+.hero-section .text p {
+    animation-delay: 0.6s;
+}
+
+.hero-section .text .links {
+    animation-delay: 0.9s;
+}
+
+
+
+/* for ABOUT-ME */
+
+.text1 {
+  color: white;
+}
+
+.hero-section h1 {
+  color: white;
+}
+
+.hero-section .links a {
+  color: white;
+}
+
+
+.text1 {
+ background: rgba(0, 0, 0, 0.4); /* полупрозрачная подложка */
+ padding: 20px;
+ border-radius: 10px;
+ display: inline-block;
+}
+
+.hero-section {
+  padding-top: -800px; /* можно менять значение — больше = выше */
+}
+
+
+
+.hero-section {
+ display: flex;
+ justify-content: center;   /* выравнивает по горизонтали */
+ align-items: flex-center;    /* ставит текст вверх */
+ height: 100vh;
+ text-align: center;
+ padding-top: 120px;         /* отступ сверху */
+}
+
+/* по умолчанию — черный */
+nav .left a {
+  color: var(--text-color);
+}
+
+/* если у body есть класс with-background — делаем белым */
+body.with-background .hero-section h1,
+body.with-background .hero-section p {
+    color: white;
+}
+
+
+/* Обводка и эффект для кнопок на странице About Me */
+.text1 .links a {
+  border: 2px solid white;
+  color: white;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease,
+              background-color 0.25s ease;
+}
+
+.text1 .links a:hover {
+  transform: scale(1.05);
+  background-color: white;
+  color: #1a1c20;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25);
+}
+
+
+
+
+
+
+nav .left a:hover,
+nav .right a:hover {
+  transform: translateY(-6px) !important;        
+}
+
+
+nav .left a * ,
+nav .right a * {
+  pointer-events: none; 
+}
+
+/* Навбар — аккуратное подпрыгивание без удаления анимаций загрузки */
+nav .left a,
+nav .right a {
+  display: inline-block;
+  transform: translateY(0);
+  transition: transform 0.25s cubic-bezier(.2,.9,.3,1);
+}
+
+/* Подпрыгивание при наведении */
+nav .left a:hover,
+nav .right a:hover {
+  transform: translateY(-6px);
+}
+
+
+/* ====== Анимация появления текста ====== */
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.contact-form {
+ max-width: 500px;
+ margin: 40px auto;
+ display: flex;
+ flex-direction: column;
+ gap: 15px;
+ 
+}
+.contact-form input,
+.contact-form textarea {
+ padding: 12px;
+ font-size: 16px;
+ border-radius: 5px;
+ border: none;
+ outline: none;
+ background: rgba(0, 0, 0, 0.1);
+ color: #000000;
+ resize: none;
+}
+.contact-form textarea {
+ height: 120px;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+ color: #272525;
+}
+.contact-form .btn {
+ background: #2b2b2b;
+ color: #ffffff;
+ font-weight: 500;
+ border: none;
+ padding: 12px;
+ border-radius: 5px;
+ cursor: pointer;
+ transition: 0.3s;
+}
+.contact-form .btn:hover {
+ background: #ffffff;
+}
+
+.Melding{
+    color: #000000;
+    text-align: center;
+}
+
+
+/* ====== Плавное появление формы ====== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* ====== Плавное появление с подъёмом ====== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Класс для анимации */
+.fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+
+.hero-section h1,
+.hero-section p {
+    background: none;       /* убираем фон */
+    border: none;           /* убираем рамку */
+    border-radius: 0;       /* убираем скругления */
+    padding: 0;             /* убираем внутренние отступы */
+    
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between; /* имя слева, почта справа */
+  align-items: center;
+  padding: 10px 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: blue;
+  font-weight: 500;
+}
+
